@@ -21,7 +21,7 @@ def autoencoder(input_size, hidden_node, tag):
     input_encode = Input(shape=(input_size,))
     input_decode = Input(shape=(hidden_node,))
 
-    noised = GaussianNoise(0)(input_encode)
+    noised = GaussianNoise(0.01)(input_encode)
 
     encoded = Dense(hidden_node, activation='sigmoid',
                     name='encode_layer' + tag)(noised)
@@ -116,7 +116,7 @@ o = decode_layer[1](o)
 o = decode_layer[0](o)
 decode_layers = Container(input_decode, o, name='decode_container')
 
-o = GaussianNoise(0)(input_encode)
+o = GaussianNoise(0.01)(input_encode)
 o = encode_layers(o)
 o = decode_layers(o)
 
