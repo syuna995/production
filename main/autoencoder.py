@@ -209,5 +209,5 @@ def plot_history(history, name):
 
 plot_history(history1, 'his1')
 plot_history(history2, 'his2')
-plot_history(history2, 'his3')
+plot_history(history3, 'his3')
 plot_history(history_fine, 'his_fine')
